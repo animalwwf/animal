@@ -2702,12 +2702,12 @@
         </div>
         <div class="row">
           <span class="label">Width</span>
-          <input type="range" id="insBW" min="20" max="1600" step="1" value="${Math.round(l.w)}">
+          <input type="range" id="insBW" min="20" max="500" step="1" value="${Math.round(l.w)}">
           <span class="range-val" id="insBWVal">${Math.round(l.w)}px</span>
         </div>
         <div class="row">
           <span class="label">Height</span>
-          <input type="range" id="insBH" min="20" max="1600" step="1" value="${Math.round(l.h)}">
+          <input type="range" id="insBH" min="20" max="500" step="1" value="${Math.round(l.h)}">
           <span class="range-val" id="insBHVal">${Math.round(l.h)}px</span>
         </div>
         <div class="row" id="insBlurRRow" style="${isPixel?'display:none':''}">
@@ -2786,12 +2786,12 @@
       inspectorBody.innerHTML = `
         <div class="row">
           <span class="label">Width</span>
-          <input type="range" id="insCW" min="20" max="1600" step="1" value="${Math.round(l.w)}">
+          <input type="range" id="insCW" min="20" max="500" step="1" value="${Math.round(l.w)}">
           <span class="range-val" id="insCWVal">${Math.round(l.w)}px</span>
         </div>
         <div class="row">
           <span class="label">Height</span>
-          <input type="range" id="insCH" min="10" max="800" step="1" value="${Math.round(l.h)}">
+          <input type="range" id="insCH" min="10" max="500" step="1" value="${Math.round(l.h)}">
           <span class="range-val" id="insCHVal">${Math.round(l.h)}px</span>
         </div>
         <div class="row">
@@ -5734,8 +5734,8 @@
   //   MAX_GIF_PIXELS    — GIF is per-frame × N frames × 4 workers in memory,
   //                       so it needs a lower cap than a one-off PNG
   const EXPORT_CONFIG = {
-    MIN_WIDTH: 1600,
-    MAX_STATIC_PIXELS: 16e6,
+    MIN_WIDTH: 500,
+    MAX_STATIC_PIXELS: 5e6,
     // 2 MP per frame × N frames lives in gif.js's internal buffer during
     // encoding. On mobile Safari with a 30-frame GIF this is ~230 MB, which
     // is the rough upper bound before the tab gets OOM-killed. Going higher
