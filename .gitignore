@@ -1,0 +1,25 @@
+.next
+node_modules
+.env
+.env.local
+.env.production
+.vercel
+.DS_Store
+*.tsbuildinfo
+tsconfig.tsbuildinfo
+*.log
+.cache
+
+# Hardhat workspace
+hardhat-test/
+compile.js
+
+# Deploy secrets
+deploy/v2/.env
+deploy/v2/deployed.json
+
+# OS
+Thumbs.db
+
+# operational notes / leak shielding
+hide/
