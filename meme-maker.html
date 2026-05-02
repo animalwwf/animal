@@ -2984,11 +2984,11 @@
   document.getElementById('addTopBottomBtn').addEventListener('click', () => {
     const r = stageRect();
     // Top
-    const top = createTextLayer({ text: 'TOP TEXT' });
+    const top = createTextLayer({ text: 'BUY $ANIMAL' });
     top.y = 12;
     applyLayerTransform(top);
     // Bottom
-    const bottom = createTextLayer({ text: 'BOTTOM TEXT' });
+    const bottom = createTextLayer({ text: 'Save the Animal' });
     bottom.y = r.height - bottom.h - 12;
     applyLayerTransform(bottom);
     setSelected(bottom.id);
