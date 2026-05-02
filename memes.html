@@ -1048,11 +1048,11 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
   </button>
 
-  <script src="memes/meme_data.js"></script>
+  <script src="meme_data.js"></script>
   <script>
-    // --- Theme Logic ---
+    // ── Theme ──
     const html = document.documentElement;
-    const savedTheme = localStorage.getItem('animal-theme') ||
+    const savedTheme = localStorage.getItem('theme') ||
       (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
     html.setAttribute('data-theme', savedTheme);
 
@@ -1060,15 +1060,16 @@
       html.classList.add('theme-transition');
       const next = html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
       html.setAttribute('data-theme', next);
-      localStorage.setItem('animal-theme', next);
+      localStorage.setItem('theme', next);
       setTimeout(() => html.classList.remove('theme-transition'), 350);
     });
 
-    // --- Build Grid from MEMES ---
-    const STORAGE_CATS_KEY = 'animalMemeCats_v1';
+    // ── Build Grid from MEMES ──
+    // Categories are user-defined. Persist custom list across sessions.
+    const STORAGE_CATS_KEY = 'memeCustomCategories_v2';
+    try { localStorage.removeItem('memeCustomCategories_v1'); } catch (e) {}
     let CUSTOM_CATS = [];
     try { CUSTOM_CATS = JSON.parse(localStorage.getItem(STORAGE_CATS_KEY) || '[]'); } catch (e) { CUSTOM_CATS = []; }
-
     function saveCats() { localStorage.setItem(STORAGE_CATS_KEY, JSON.stringify(CUSTOM_CATS)); }
     function normalizeCat(name) { return String(name || '').trim().toLowerCase(); }
     function addCustomCategory(name) {
@@ -1089,20 +1090,19 @@
     }
     function allCategories() {
       const set = new Set(CUSTOM_CATS);
-      if(typeof MEMES !== 'undefined') {
-          MEMES.forEach(m => {
-            effectiveMeme(m).categories.forEach(c => { if (c) set.add(c); });
-          });
-      }
+      memes.forEach(m => {
+        effectiveMeme(m).categories.forEach(c => { if (c) set.add(c); });
+      });
       return Array.from(set).sort();
     }
     function labelize(cat) { return cat ? cat.charAt(0).toUpperCase() + cat.slice(1) : ''; }
 
-    // --- Tag Editor ---
-    const STORAGE_KEY = 'animalTagEdits_v1';
+    // ── Tag editor: persistent per-file overrides {file: {tags:[...], category:"..."}} ──
+    const STORAGE_KEY = 'memeTagEdits_v2';
+    // One-time cleanup of legacy keys
+    try { localStorage.removeItem('memeTagEdits_v1'); } catch (e) {}
     let TAG_EDITS = {};
     try { TAG_EDITS = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) { TAG_EDITS = {}; }
-
     function saveEdits() { localStorage.setItem(STORAGE_KEY, JSON.stringify(TAG_EDITS)); }
     function memeCategories(m) {
       if (!m) return [];
@@ -1118,21 +1118,27 @@
       return merged;
     }
 
-    // Updated Preset Groups for $ANIMAL
+    // Preset tag groups for the editor
     const PRESET_GROUPS = [
-      ['Species', ['ape', 'bear', 'dog', 'elephant', 'giraffe', 'lamb', 'lion', 'meerkat', 'monkey', 'tiger', 'rhino', 'turtle', 'whale']],
-      ['Environment', ['habitat', 'jungle', 'forest', 'ocean', 'savanna', 'earth', 'nature', 'water', 'fire', 'plants']],
-      ['Crypto', ['pump', 'hold', 'buy', 'solana', 'pumpfun', 'dex', 'moon', 'bullish', 'donated', 'wwf', 'charity']],
-      ['Action', ['saving', 'donating', 'holding', 'running', 'fighting', 'protecting', 'graduated']],
-      ['Format', ['photo', 'art', 'comic', 'screenshot', 'text-meme', 'pixel-art']]
+      ['Mood', ['crying','tears','sad','frowning','smug','smiling','happy','laughing','angry','scared','shocked','screaming','tired','sleeping','dead','deadpan','exhausted','depressed','drunk','confused']],
+      ['Action', ['standing','sitting','lying','running','holding','drinking','eating','smoking','pointing','hugging','cooking','gambling','fighting','dancing','riding','falling']],
+      ['Subject', ['chart','candlestick','money','dollar','bags','food','phone','computer','tv','car','motorcycle','gun','knife','sword','weapon','rope','noose','cigarette','smoke','fire','blood','crown','beanie','hat','sunglasses','glasses','headphones','guitar','drums','microphone','ring','ticket','cup','bottle','lamp','candle','balloons','flowers','heart','skull','christmas-tree','sleigh','axe','spatula','apron','chef-hat','plush','toy','mask','sign']],
+      ['Character', ['pepe','wojak','frog','kermit','pikachu','anime-girl','anime-boy','baby','alien','robot','skeleton','cat','dog','bird','horse','sheep','whale']],
+      ['Person', ['elon','cz','trump','dokwon','kaled','huang','ozzy','frank']],
+      ['Crypto', ['crypto','bitcoin','monad','dip','pump','dump','hold','hodl','buy','sell','rugged','shilling','bags','moon','lambo','cope','rekt','fud','early','wen','hopium','gm','gn','gmonad']],
+      ['Scene', ['kitchen','bathroom','bedroom','living-room','cafe','restaurant','bar','club','garage','office','classroom','city','street','alley','field','forest','beach','mountain','desert','snow','space','indoor','outdoor','rooftop']],
+      ['Color', ['red','green','blue','pink','yellow','purple','black','white','orange','rainbow','neon']],
+      ['Format', ['photo','photo-edit','comic','panel','screenshot','text-meme','pixel-art','3d']],
+      ['Theme', ['christmas','halloween','winter','summer','valentine']],
+      ['Vibe', ['wholesome','cursed','funny','classic-meme','doomer','cute']]
     ];
 
-    const memes = typeof MEMES !== 'undefined' ? MEMES.slice().sort((a, b) => {
+    const memes = MEMES.slice().sort((a, b) => {
       const av = a.file.endsWith('.mp4') ? 1 : 0;
       const bv = b.file.endsWith('.mp4') ? 1 : 0;
-      if (av !== bv) return av - bv;
-      return 0;
-    }) : [];
+      if (av !== bv) return av - bv; // images first, videos last
+      return 0; // preserve original order otherwise
+    });
 
     const memeGrid = document.getElementById('memeGrid');
     const emptyState = document.getElementById('emptyState');
@@ -1143,19 +1149,18 @@
       div.className = 'meme-item';
       div.setAttribute('tabindex', '0');
       div.setAttribute('role', 'button');
-      div.setAttribute('aria-label', 'View meme: ' + (meme.name || meme.file));
+      div.setAttribute('aria-label', 'View meme: ' + meme.name);
       div.dataset.index = idx;
       div.dataset.file = meme.file;
-
+      // Index built from CURRENT (= base + user edits)
       const cur = effectiveMeme(meme);
       const cats = cur.categories || [];
       div.dataset.categories = cats.join(',');
-
       const tagsLower = (cur.tags || []).map(t => String(t).toLowerCase());
       div._strong = (cur.name || '').toLowerCase() + ' ' + tagsLower.join(' ') + ' ' + cats.join(' ');
       div._weak = ((cur.text || '') + ' ' + (cur.description || '')).toLowerCase();
       div._tagSet = new Set(tagsLower);
-
+      // Edited badge
       const badge = document.createElement('span');
       badge.className = 'edit-badge';
       badge.textContent = 'edited';
@@ -1164,7 +1169,6 @@
 
       const isVideo = meme.file.endsWith('.mp4');
       let mediaEl = null;
-
       if (isVideo) {
         const video = document.createElement('video');
         video.src = 'memes/' + meme.file;
@@ -1179,7 +1183,7 @@
       } else {
         const img = document.createElement('img');
         img.src = 'memes/' + meme.file;
-        img.alt = meme.name || 'Meme image';
+        img.alt = meme.name;
         img.loading = 'lazy';
         img.setAttribute('data-loading', 'true');
         img.addEventListener('load', () => img.removeAttribute('data-loading'));
@@ -1189,6 +1193,7 @@
       }
 
       div.appendChild(buildActionsOverlay('memes/' + meme.file, meme.file, mediaEl));
+
       memeGrid.appendChild(div);
     });
 
@@ -1202,14 +1207,14 @@
       dl.download = filename;
       dl.target = '_blank';
       dl.rel = 'noopener';
-      dl.title = 'Download';
+      dl.title = 'Download (opens in new tab)';
       dl.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg><span>Download</span>';
       dl.addEventListener('click', e => e.stopPropagation());
 
       const cp = document.createElement('button');
       cp.type = 'button';
       cp.className = 'meme-action';
-      cp.title = 'Copy';
+      cp.title = 'Copy image';
       cp.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg><span>Copy</span>';
       cp.addEventListener('click', async e => {
         e.stopPropagation();
@@ -1219,7 +1224,7 @@
       const ed = document.createElement('a');
       ed.className = 'meme-action';
       ed.href = 'meme-maker.html?img=' + encodeURIComponent(src);
-      ed.title = 'Edit Maker';
+      ed.title = 'Edit with Meme Maker';
       ed.innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5z"/></svg><span>Edit</span>';
       ed.addEventListener('click', e => e.stopPropagation());
 
@@ -1229,6 +1234,8 @@
       return wrap;
     }
 
+    // Accepts either an HTMLImageElement (preferred — no fetch needed, keeps the
+    // user gesture intact for Safari/iOS) or a URL string fallback.
     async function copyImageToClipboard(imgOrSrc, btn) {
       const span = btn && btn.querySelector('span');
       if (btn && span && btn._origText === undefined) btn._origText = span.textContent;
@@ -1250,12 +1257,18 @@
         try {
           await navigator.clipboard.writeText(new URL(src, location.href).href);
           flash('URL copied');
-        } catch (_) { alert('Clipboard not supported.'); }
+        } catch (_) { alert('Clipboard not supported in this browser.'); }
         return;
       }
 
+      // Build the PNG blob inside a Promise that we hand to ClipboardItem
+      // synchronously, so navigator.clipboard.write fires in the same tick as
+      // the click. iOS Safari rejects with "not allowed" if the gesture has
+      // already been lost to an awaited fetch.
       const pngBlobPromise = (async () => {
         if (imgReady) {
+          // Fast path: read pixels straight off the already-loaded element. No
+          // fetch, no decode. Same-origin so the canvas isn't tainted.
           const c = document.createElement('canvas');
           c.width = imgOrSrc.naturalWidth;
           c.height = imgOrSrc.naturalHeight;
@@ -1264,6 +1277,9 @@
             c.toBlob(b => b ? resolve(b) : reject(new Error('toBlob failed')), 'image/png');
           });
         }
+        // Fallback path (image not ready yet): fetch it. May lose the gesture
+        // on Safari and fall through to the URL-copy fallback below — that's
+        // still better than silently failing.
         const resp = await fetch(src, { mode: 'cors', credentials: 'omit' });
         if (!resp.ok) throw new Error('fetch ' + resp.status);
         const blob = await resp.blob();
@@ -1276,12 +1292,12 @@
             c.getContext('2d').drawImage(img, 0, 0);
             c.toBlob(b => b ? resolve(b) : reject(new Error('toBlob failed')), 'image/png');
           };
-          img.onerror = () => reject(new Error('decode failed'));
+          img.onerror = () => reject(new Error('image decode failed'));
           img.src = URL.createObjectURL(blob);
         });
       })();
-
       pngBlobPromise.catch(() => {});
+
       try {
         await navigator.clipboard.write([new ClipboardItem({ 'image/png': pngBlobPromise })]);
         flash('Copied!');
@@ -1290,12 +1306,12 @@
           await navigator.clipboard.writeText(new URL(src, location.href).href);
           flash('URL copied');
         } catch (_) {
-          alert('Copy failed.');
+          alert('Copy failed: ' + (err && err.message ? err.message : err));
         }
       }
     }
 
-    // --- Category Filters ---
+    // ── Category pills (dynamic) ──
     const pillsEl = document.getElementById('categoryPills');
     function rebuildCategoryPills() {
       const counts = { all: memes.length };
@@ -1304,7 +1320,6 @@
       });
       const cats = ['all', ...allCategories()];
       const previousActive = activeCategory || 'all';
-
       pillsEl.innerHTML = '';
       cats.forEach(cat => {
         const btn = document.createElement('button');
@@ -1317,22 +1332,22 @@
         btn.innerHTML = (cat === 'all' ? 'All' : labelize(cat)) + ' <span class="pill-count">' + count + '</span>';
         pillsEl.appendChild(btn);
       });
-
+      // If active category no longer exists, fall back to "all"
       if (previousActive !== 'all' && !counts[previousActive]) {
         activeCategory = 'all';
         const allBtn = pillsEl.querySelector('.pill[data-cat="all"]');
         if (allBtn) { allBtn.classList.add('active'); allBtn.setAttribute('aria-selected', 'true'); }
       }
     }
-
     let activeCategory = 'all';
     rebuildCategoryPills();
 
-    // --- Search Logic ---
+    // ── Filter logic ──
     const searchInput = document.getElementById('searchInput');
     const searchClear = document.getElementById('searchClear');
     let searchTerm = '';
 
+    // Word-boundary regex builder (escapes regex metachars in user input)
     function termRegex(term) {
       const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
       return new RegExp('\\b' + esc + '\\b', 'i');
@@ -1344,28 +1359,28 @@
       let visible = 0;
       let regex = null;
       let containsQ = '';
-
       if (rawQ) {
+        // Try word-boundary regex first (handles "crying" → matches the word, not "carrying").
+        // For very short queries (<3 chars) or queries with non-letter chars, fall back to substring.
         if (rawQ.length >= 3 && /^[a-z0-9-]+$/.test(rawQ)) {
           regex = termRegex(rawQ);
         } else {
           containsQ = rawQ;
         }
       }
-
+      // Score-then-sort: items with strong-field hits rank above weak-field-only hits.
       const scored = [];
       items.forEach(item => {
         const cats = (item.dataset.categories || '').split(',').filter(Boolean);
         const matchesCat = activeCategory === 'all' || cats.includes(activeCategory);
-
         if (!matchesCat) { item.classList.add('hidden'); return; }
-
         let score = 0;
         if (!rawQ) {
-          score = 1;
+          score = 1; // no query: show all matching category
         } else {
+          // Strong field (name + tags + category): word-boundary match
           if (regex) {
-            if (item._tagSet && item._tagSet.has(rawQ)) score += 10;
+            if (item._tagSet && item._tagSet.has(rawQ)) score += 10; // exact tag
             if (regex.test(item._strong)) score += 5;
             if (regex.test(item._weak)) score += 2;
           } else {
@@ -1373,7 +1388,6 @@
             if (item._weak.includes(containsQ)) score += 2;
           }
         }
-
         if (score > 0) {
           item.classList.remove('hidden');
           scored.push([item, score]);
@@ -1382,14 +1396,13 @@
           item.classList.add('hidden');
         }
       });
-
+      // Re-order DOM only when a query is active (so no-query state preserves original order)
       if (rawQ && scored.length > 1) {
         scored.sort((a, b) => b[1] - a[1]);
         const frag = document.createDocumentFragment();
         scored.forEach(([el]) => frag.appendChild(el));
         memeGrid.appendChild(frag);
       }
-
       memeCountEl.textContent = visible + ' / ' + memes.length;
       emptyState.classList.toggle('visible', visible === 0);
     }
@@ -1420,9 +1433,9 @@
       searchInput.focus();
     });
 
-    applyFilters();
+    applyFilters(); // initial count
 
-    // --- Lightbox ---
+    // ── Lightbox ──
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxVideo = document.getElementById('lightboxVideo');
@@ -1437,14 +1450,15 @@
     const lightboxCaptionTags = document.getElementById('lightboxCaptionTags');
 
     let lightboxCurrentSrc = '';
-    let visibleMemes = [];
-    let currentIndex = 0;
-    let previousFocus = null;
-
     lightboxCopy.addEventListener('click', () => {
+      // Prefer the loaded <img> bitmap so clipboard.write stays in the user gesture (no fetch).
       const ready = lightboxImg && lightboxImg.style.display !== 'none' && lightboxImg.complete && lightboxImg.naturalWidth;
       copyImageToClipboard(ready ? lightboxImg : lightboxCurrentSrc, lightboxCopy);
     });
+
+    let visibleMemes = [];
+    let currentIndex = 0;
+    let previousFocus = null;
 
     function refreshVisibleMemes() {
       visibleMemes = Array.from(memeGrid.querySelectorAll('.meme-item:not(.hidden):not(.error)'))
@@ -1469,13 +1483,25 @@
       if (previousFocus) previousFocus.focus();
     }
 
+    function reindexItem(file) {
+      const item = memeGrid.querySelector('.meme-item[data-file="' + CSS.escape(file) + '"]');
+      if (!item) return;
+      const idx = parseInt(item.dataset.index, 10);
+      const cur = effectiveMeme(memes[idx]);
+      const cats = cur.categories || [];
+      const tagsLower = (cur.tags || []).map(t => String(t).toLowerCase());
+      item.dataset.categories = cats.join(',');
+      item._strong = (cur.name || '').toLowerCase() + ' ' + tagsLower.join(' ') + ' ' + cats.join(' ');
+      item._weak = ((cur.text || '') + ' ' + (cur.description || '')).toLowerCase();
+      item._tagSet = new Set(tagsLower);
+      item.classList.toggle('edited', !!TAG_EDITS[file]);
+    }
+
     function updateLightbox() {
       const meme = visibleMemes[currentIndex];
       if (!meme) return;
-
       const src = 'memes/' + meme.file;
       const isVideo = meme.file.endsWith('.mp4');
-
       if (isVideo) {
         lightboxImg.style.display = 'none';
         lightboxVideo.style.display = '';
@@ -1488,20 +1514,241 @@
         lightboxVideo.src = '';
         lightboxImg.style.display = '';
         lightboxImg.src = src;
-        lightboxImg.alt = meme.name || 'Meme';
+        lightboxImg.alt = meme.name;
       }
-
       const cur = effectiveMeme(meme);
       lightboxCounter.textContent = (currentIndex + 1) + ' / ' + visibleMemes.length;
       lightboxDownload.href = src;
       lightboxDownload.setAttribute('download', meme.file);
       lightboxCurrentSrc = src;
       lightboxEditBtn.href = 'meme-maker.html?img=' + encodeURIComponent(src);
+      lightboxCaption.textContent = cur.name;
+      lightboxCaptionTags.innerHTML = '';
+      // Render editor panel
+      renderEditor(meme);
+      (cur.tags || []).forEach(t => {
+        const chip = document.createElement('span');
+        chip.className = 'lightbox-caption-tag';
+        chip.textContent = t;
+        chip.addEventListener('click', () => {
+          // Click a tag to filter by it
+          searchInput.value = t;
+          searchTerm = t;
+          searchClear.classList.add('visible');
+          // Reset category to 'all' so search has full reach
+          pillsEl.querySelectorAll('.pill').forEach(p => {
+            const isAll = p.dataset.cat === 'all';
+            p.classList.toggle('active', isAll);
+            p.setAttribute('aria-selected', isAll ? 'true' : 'false');
+          });
+          activeCategory = 'all';
+          applyFilters();
+          closeLightbox();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+        lightboxCaptionTags.appendChild(chip);
+      });
+    }
+
+    function showMeme(delta) {
+      if (!visibleMemes.length) return;
+      currentIndex = (currentIndex + delta + visibleMemes.length) % visibleMemes.length;
+      updateLightbox();
+    }
+
+    // Click to open
+    memeGrid.addEventListener('click', (e) => {
+      const item = e.target.closest('.meme-item');
+      if (!item || item.classList.contains('hidden') || item.classList.contains('error')) return;
+      const meme = memes[parseInt(item.dataset.index, 10)];
+      openLightboxByMeme(meme);
+    });
+
+    memeGrid.addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter' && e.key !== ' ') return;
+      const item = e.target.closest('.meme-item');
+      if (!item) return;
+      e.preventDefault();
+      const meme = memes[parseInt(item.dataset.index, 10)];
+      openLightboxByMeme(meme);
+    });
+
+    // Navigation
+    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showMeme(-1); });
+    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showMeme(1); });
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
+
+    // Keyboard
+    document.addEventListener('keydown', (e) => {
+      // Slash focuses search when not in an input
+      if (e.key === '/' && !lightbox.classList.contains('active')
+          && document.activeElement.tagName !== 'INPUT'
+          && document.activeElement.tagName !== 'TEXTAREA') {
+        e.preventDefault();
+        searchInput.focus();
+        return;
+      }
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      else if (e.key === 'ArrowLeft') showMeme(-1);
+      else if (e.key === 'ArrowRight') showMeme(1);
+      else if (e.key === 'Tab') {
+        const focusable = lightbox.querySelectorAll('button, a');
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+        else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    });
+
+    // ── Tag Editor ──
+    const editToggleBtn = document.getElementById('editToggle');
+    const lightboxEdit = document.getElementById('lightboxEdit');
+    const editCurrentTags = document.getElementById('editCurrentTags');
+    const editPresetsContainer = document.getElementById('editPresetsContainer');
+    const editAddInput = document.getElementById('editAddInput');
+    const editResetBtn = document.getElementById('editResetBtn');
+    const editExportBtn = document.getElementById('editExportBtn');
+    const editCatRow = document.getElementById('editCatRow');
+    const editHelp = document.getElementById('editHelp');
+
+    // Build preset groups once
+    PRESET_GROUPS.forEach(([groupName, tags]) => {
+      const sec = document.createElement('div');
+      sec.className = 'edit-section';
+      sec.innerHTML = '<div class="edit-section-title">' + groupName + '</div>';
+      const row = document.createElement('div');
+      row.className = 'edit-preset-row';
+      row.dataset.group = groupName;
+      tags.forEach(t => {
+        const btn = document.createElement('button');
+        btn.className = 'preset-tag';
+        btn.dataset.tag = t;
+        btn.textContent = t;
+        btn.addEventListener('click', () => togglePresetTag(t));
+        row.appendChild(btn);
+      });
+      sec.appendChild(row);
+      editPresetsContainer.appendChild(sec);
+    });
+
+    // Build category row dynamically; rebuild whenever categories change
+    function rebuildEditorCatRow() {
+      editCatRow.innerHTML = '';
+      const cats = allCategories();
+      if (cats.length === 0) {
+        const empty = document.createElement('span');
+        empty.className = 'edit-tag empty';
+        empty.textContent = '(no categories yet — add one below)';
+        editCatRow.appendChild(empty);
+        return;
+      }
+      cats.forEach(c => {
+        const wrap = document.createElement('span');
+        wrap.style.display = 'inline-flex';
+        wrap.style.alignItems = 'center';
+        const btn = document.createElement('button');
+        btn.className = 'preset-tag';
+        btn.dataset.cat = c;
+        btn.textContent = c;
+        btn.addEventListener('click', () => toggleCategory(c));
+        wrap.appendChild(btn);
+        // Trash button: only if no meme uses this category in current data (custom-only)
+        const usedCount = memes.reduce((n, m) => n + (effectiveMeme(m).categories.includes(c) ? 1 : 0), 0);
+        if (usedCount === 0) {
+          const del = document.createElement('button');
+          del.className = 'preset-tag';
+          del.style.marginLeft = '2px';
+          del.style.padding = '4px 6px';
+          del.style.fontSize = '10px';
+          del.title = 'Remove unused category';
+          del.textContent = '×';
+          del.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (removeCustomCategory(c)) {
+              rebuildEditorCatRow();
+              rebuildCategoryPills();
+            }
+          });
+          wrap.appendChild(del);
+        }
+        editCatRow.appendChild(wrap);
+      });
+    }
+    rebuildEditorCatRow();
+
+    const editNewCatInput = document.getElementById('editNewCatInput');
+    const editClearCatBtn = document.getElementById('editClearCatBtn');
+    editNewCatInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        const v = normalizeCat(editNewCatInput.value);
+        if (v) {
+          addCustomCategory(v);
+          // Add (don't replace) to current meme
+          const meme = getCurrentMeme();
+          if (meme) {
+            const cur = effectiveMeme(meme);
+            if (!cur.categories.includes(v)) {
+              const cats = cur.categories.slice();
+              cats.push(v);
+              setEdit(meme.file, { categories: cats });
+              renderEditor(meme);
+            }
+          }
+          editNewCatInput.value = '';
+          rebuildEditorCatRow();
+          rebuildCategoryPills();
+        }
+      } else if (e.key === 'Escape') {
+        editNewCatInput.blur();
+      }
+      e.stopPropagation();
+    });
+    editClearCatBtn.addEventListener('click', () => {
+      const meme = getCurrentMeme(); if (!meme) return;
+      setEdit(meme.file, { categories: [] });
+      const updated = effectiveMeme(meme);
+      renderEditor(meme);
+      refreshLightboxTagChips(updated);
+      rebuildEditorCatRow();
+      rebuildCategoryPills();
+    });
+
+    function getCurrentMeme() { return visibleMemes[currentIndex]; }
+
+    function setEdit(file, patch) {
+      const baseMeme = memes.find(m => m.file === file);
+      if (!baseMeme) return;
+      const existing = TAG_EDITS[file] || {};
+      const merged = Object.assign({}, existing, patch);
+      // Always normalize categories to a deduped array
+      let newCats;
+      if ('categories' in merged || 'category' in merged) {
+        newCats = memeCategories(merged);
+      } else {
+        newCats = memeCategories(existing).length ? memeCategories(existing) : memeCategories(baseMeme);
+      }
+      const baseCats = memeCategories(baseMeme);
+      const newTags = (merged.tags || []).map(t => String(t).toLowerCase());
+      const baseTags = (baseMeme.tags || []).map(t => String(t).toLowerCase());
+      const isDefault = arraysEqual(newCats, baseCats) && arraysEqual(newTags, baseTags);
+      if (isDefault) {
+        delete TAG_EDITS[file];
+      } else {
+        merged.categories = newCats;
+        delete merged.category; // drop legacy single-string field
+        TAG_EDITS[file] = merged;
+      }
+      saveEdits();
+      reindexItem(file);
+    }
+    function arraysEqual(a, b) { if (a.length !== b.length) return false; for (let i = 0; i < a.length; i++) if (a[i] !== b[i]) return false; return true; }
+
+    function refreshLightboxTagChips(cur) {
       lightboxCaption.textContent = cur.name || '';
       lightboxCaptionTags.innerHTML = '';
-
-      if(EDIT_MODE_ENABLED) renderEditor(meme);
-
       (cur.tags || []).forEach(t => {
         const chip = document.createElement('span');
         chip.className = 'lightbox-caption-tag';
@@ -1524,56 +1771,170 @@
       });
     }
 
-    function showMeme(delta) {
-      if (!visibleMemes.length) return;
-      currentIndex = (currentIndex + delta + visibleMemes.length) % visibleMemes.length;
-      updateLightbox();
+    function addTag(tag) {
+      const meme = getCurrentMeme(); if (!meme) return;
+      tag = String(tag || '').trim().toLowerCase().replace(/\s+/g, '-');
+      if (!tag) return;
+      const cur = effectiveMeme(meme);
+      const tags = (cur.tags || []).slice();
+      if (tags.includes(tag)) return;
+      tags.push(tag);
+      setEdit(meme.file, { tags });
+      const updated = effectiveMeme(meme);
+      renderEditor(meme);
+      refreshLightboxTagChips(updated);
+    }
+    function removeTag(tag) {
+      const meme = getCurrentMeme(); if (!meme) return;
+      const cur = effectiveMeme(meme);
+      const tags = (cur.tags || []).filter(t => t !== tag);
+      setEdit(meme.file, { tags });
+      const updated = effectiveMeme(meme);
+      renderEditor(meme);
+      refreshLightboxTagChips(updated);
+    }
+    function togglePresetTag(tag) {
+      const meme = getCurrentMeme(); if (!meme) return;
+      const cur = effectiveMeme(meme);
+      if ((cur.tags || []).includes(tag)) removeTag(tag);
+      else addTag(tag);
+    }
+    function toggleCategory(cat) {
+      const meme = getCurrentMeme(); if (!meme) return;
+      cat = normalizeCat(cat);
+      if (!cat) return;
+      const cur = effectiveMeme(meme);
+      const cats = cur.categories.slice();
+      const i = cats.indexOf(cat);
+      if (i >= 0) cats.splice(i, 1);
+      else cats.push(cat);
+      setEdit(meme.file, { categories: cats });
+      renderEditor(meme);
+      rebuildCategoryPills();
+    }
+    // Back-compat alias (any old reference)
+    const setCategory = toggleCategory;
+    function resetMeme() {
+      const meme = getCurrentMeme(); if (!meme) return;
+      delete TAG_EDITS[meme.file];
+      saveEdits();
+      reindexItem(meme.file);
+      const updated = effectiveMeme(meme);
+      renderEditor(meme);
+      refreshLightboxTagChips(updated);
     }
 
-    memeGrid.addEventListener('click', (e) => {
-      const item = e.target.closest('.meme-item');
-      if (!item || item.classList.contains('hidden') || item.classList.contains('error')) return;
-      const meme = memes[parseInt(item.dataset.index, 10)];
-      openLightboxByMeme(meme);
-    });
-
-    memeGrid.addEventListener('keydown', (e) => {
-      if (e.key !== 'Enter' && e.key !== ' ') return;
-      const item = e.target.closest('.meme-item');
-      if (!item) return;
-      e.preventDefault();
-      const meme = memes[parseInt(item.dataset.index, 10)];
-      openLightboxByMeme(meme);
-    });
-
-    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showMeme(-1); });
-    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showMeme(1); });
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (e) => { if (e.target === lightbox) closeLightbox(); });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === '/' && !lightbox.classList.contains('active') && document.activeElement.tagName !== 'INPUT') {
-        e.preventDefault();
-        searchInput.focus();
-        return;
+    function renderEditor(meme) {
+      const cur = effectiveMeme(meme);
+      const tags = cur.tags || [];
+      // Current tags
+      editCurrentTags.innerHTML = '';
+      if (tags.length === 0) {
+        const empty = document.createElement('span');
+        empty.className = 'edit-tag empty';
+        empty.textContent = '(no tags)';
+        editCurrentTags.appendChild(empty);
+      } else {
+        tags.forEach(t => {
+          const chip = document.createElement('button');
+          chip.className = 'edit-tag';
+          chip.innerHTML = t + '<span class="remove">&times;</span>';
+          chip.addEventListener('click', () => removeTag(t));
+          editCurrentTags.appendChild(chip);
+        });
       }
-      if (!lightbox.classList.contains('active')) return;
-      if (e.key === 'Escape') closeLightbox();
-      else if (e.key === 'ArrowLeft') showMeme(-1);
-      else if (e.key === 'ArrowRight') showMeme(1);
+      // Presets: highlight active
+      const tagSet = new Set(tags);
+      editPresetsContainer.querySelectorAll('.preset-tag').forEach(btn => {
+        btn.classList.toggle('active', tagSet.has(btn.dataset.tag));
+      });
+      // Categories: highlight all currently-applied
+      const curCatSet = new Set(cur.categories || []);
+      editCatRow.querySelectorAll('.preset-tag').forEach(btn => {
+        if (btn.dataset.cat) btn.classList.toggle('active', curCatSet.has(btn.dataset.cat));
+      });
+      // Edit help count
+      const editCount = Object.keys(TAG_EDITS).length;
+      editHelp.textContent = editCount === 0
+        ? 'Edits saved to this browser. Click "Export all edits" to download updated meme_data.js.'
+        : editCount + ' meme(s) edited. Click "Export all edits" to download updated meme_data.js.';
+    }
+
+    editAddInput.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        addTag(editAddInput.value);
+        editAddInput.value = '';
+      } else if (e.key === 'Escape') {
+        editAddInput.blur();
+      }
+      e.stopPropagation();
+    });
+    editResetBtn.addEventListener('click', resetMeme);
+
+    // Export: bake current TAG_EDITS into a fresh meme_data.js and download as a file
+    editExportBtn.addEventListener('click', () => {
+      const out = memes.map(m => {
+        const cur = effectiveMeme(m);
+        return {
+          file: cur.file,
+          name: cur.name || '',
+          categories: cur.categories || [],
+          text: cur.text || '',
+          description: cur.description || '',
+          tags: cur.tags || []
+        };
+      });
+      const js = '// Auto-generated meme metadata. Each entry: { file, name, category, text, description, tags }\n'
+               + 'const MEMES = ' + JSON.stringify(out, null, 2) + ';\n';
+      const blob = new Blob([js], { type: 'text/javascript' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'meme_data.js';
+      document.body.appendChild(a);
+      a.click();
+      a.remove();
+      URL.revokeObjectURL(url);
     });
 
-    // --- Swipe Support ---
+    // Flip to true to re-enable the in-page tag/category editor.
+    const EDIT_MODE_ENABLED = false;
+
+    function setEditMode(on) {
+      if (!EDIT_MODE_ENABLED) on = false;
+      document.body.classList.toggle('edit-mode', on);
+      localStorage.setItem('memeEditMode', on ? '1' : '0');
+    }
+    if (EDIT_MODE_ENABLED) {
+      editToggleBtn.addEventListener('click', () => setEditMode(!document.body.classList.contains('edit-mode')));
+      if (localStorage.getItem('memeEditMode') === '1') setEditMode(true);
+
+      // E key toggles edit mode (when not in an input)
+      document.addEventListener('keydown', (e) => {
+        if (e.key !== 'e' && e.key !== 'E') return;
+        if (document.activeElement.tagName === 'INPUT' || document.activeElement.tagName === 'TEXTAREA') return;
+        if (lightbox.classList.contains('active')) return; // arrow-key navigation already handles lightbox
+        setEditMode(!document.body.classList.contains('edit-mode'));
+      });
+    } else {
+      editToggleBtn.style.display = 'none';
+      setEditMode(false);
+    }
+
+    // ── Touch Swipe ──
     (function() {
       let startX = 0;
       let startY = 0;
       let swiping = false;
+
       lightbox.addEventListener('touchstart', (e) => {
-        if (e.target === lightboxClose || e.target.closest('.lightbox-nav') || e.target.closest('.lightbox-action')) return;
+        if (e.target === lightboxClose || e.target.closest('.lightbox-nav') || e.target.closest('.lightbox-action') || e.target.closest('.lightbox-caption-tag')) return;
         startX = e.touches[0].clientX;
         startY = e.touches[0].clientY;
         swiping = true;
       }, { passive: true });
+
       lightbox.addEventListener('touchend', (e) => {
         if (!swiping) return;
         swiping = false;
@@ -1585,25 +1946,19 @@
       }, { passive: true });
     })();
 
-    // --- Back to Top ---
+    // ── Back to Top ──
     const backToTop = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
       backToTop.classList.toggle('visible', window.scrollY > 400);
     }, { passive: true });
+
     backToTop.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
+  </script>
 
-    // --- Tag Editor Logic ---
-    const editToggleBtn = document.getElementById('editToggle');
-    const EDIT_MODE_ENABLED = false; // set to true if you want to enable in-browser tag editing
-
-    if (!EDIT_MODE_ENABLED) {
-        editToggleBtn.style.display = 'none';
-        document.body.classList.remove('edit-mode');
-    }
-
-    // --- Page Transitions ---
+  <script>
+    // ── Page Transition ──
     (function() {
       const pt = document.getElementById('pageTransition');
       if (!pt) return;
@@ -1618,6 +1973,7 @@
         logo.style.display = '';
         glow.style.display = '';
       }
+
       function hideTransitionAfterDelay() {
         clearTimeout(hideTimeout);
         hideTimeout = setTimeout(() => {
@@ -1626,6 +1982,7 @@
           glow.style.display = 'none';
         }, 1600);
       }
+
       function resetTransitionState() {
         clearTimeout(hideTimeout);
         pt.classList.remove('exit-active');
@@ -1634,6 +1991,7 @@
       }
 
       hideTransitionAfterDelay();
+
       window.addEventListener('pageshow', (event) => {
         if (!event.persisted) return;
         showTransition();
@@ -1645,6 +2003,7 @@
         if (!link) return;
         const href = link.getAttribute('href');
         if (href !== 'index.html' && !href.endsWith('/index.html')) return;
+
         e.preventDefault();
         if (navigating) return;
         navigating = true;
@@ -1652,6 +2011,7 @@
         showTransition();
         pt.classList.add('exit-active');
         sessionStorage.setItem('pt-entering', '1');
+
         setTimeout(() => {
           window.location.href = href;
         }, 1400);

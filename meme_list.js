@@ -1,0 +1,16 @@
+const MEME_FILES = [
+  "ape.jpg",
+  "asian-elephant.jpg",
+  "bear.jpg",
+  "dog.jpg",
+  "elephant.jpg",
+  "giraffe.jpg",
+  "lamb.jpg",
+  "lion.jpg",
+  "meerket.jpg",
+  "money.jpg",
+  "orangutan.jpg",
+  "rhino.jpg",
+  "tiger.jpg",
+  "turtle.png",
+];
