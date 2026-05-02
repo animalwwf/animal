@@ -18,7 +18,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 
   <!-- Scripts -->
-  <script src="stickers/stickers.js?v=1b40a1063d"></script>
+  <script src="stickers/stickers.js?v=2595c61e30"></script>
   <script src="templates/templates.js?v=6e79321217"></script>
   <script src="emojis.js"></script>
   <script src="vendor/omggif.js"></script>
@@ -732,7 +732,7 @@
           <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg> Download
         </button>
         <button class="btn primary" id="saveBtn" title="Save to Photos / Share">
-          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Export
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg> Save
         </button>
       </div>
     </div>
@@ -3018,11 +3018,14 @@
   // like any other sticker). Clicking again removes it. Tagged with
   // l.isWatermark so we can find/remove it on subsequent clicks.
   const WATERMARKS = [
-    { src: 'stickers/animal-logo.png',           name: '$ANIMAL',                 pos: 'bl' },
+    { src: 'stickers/animal-logo.png',   name: '$ANIMAL',                 pos: 'bl' },
+    { src: 'stickers/animal-logo.jpg',   name: 'animal logo',       pos: 'br' },
     { src: 'stickers/pump-logo.png',     name: 'pump logo',       pos: 'br' },
-    { src: 'stickers/pumpfun.png',      name: 'pump.fun name',        pos: 'br' },
-    { src: 'stickers/solana-logo.png', name: 'solana log', pos: 'br' },
-    { src: 'stickers/solanaLogo.png', name: 'solana name', pos: 'br' },
+    { src: 'stickers/pumpfun.png',       name: 'pump.fun name',        pos: 'br' },
+    { src: 'stickers/solana-logo.png',   name: 'solana logo', pos: 'br' },
+    { src: 'stickers/solanaLogo.png',    name: 'solana name', pos: 'br' },
+    { src: 'stickers/wwf-black.png',     name: 'wwf black logo', pos: 'br' },
+    { src: 'stickers/wwf-white.png',     name: 'wwf white logo', pos: 'br' },
   ];
   function findWatermarkLayerBySrc(src) {
     return state.layers.find(l => l && l.isWatermark && l.src === src);
