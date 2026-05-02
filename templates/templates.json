@@ -901,6 +901,12 @@
       "category": "gifs"
     },
     {
+      "name": "Cat Angry",
+      "file": "cat-angry.gif",
+      "src": "templates/gifs/cat-angry.gif",
+      "category": "gifs"
+    },
+    {
       "name": "Cat Cat Love",
       "file": "cat-cat-love.gif",
       "src": "templates/gifs/cat-cat-love.gif",
@@ -964,6 +970,12 @@
       "name": "Chased By Ostrich This Is Happening",
       "file": "chased-by-ostrich-this-is-happening.gif",
       "src": "templates/gifs/chased-by-ostrich-this-is-happening.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Cheetah Watch",
+      "file": "cheetah-watch.gif",
+      "src": "templates/gifs/cheetah-watch.gif",
       "category": "gifs"
     },
     {
@@ -1285,9 +1297,9 @@
       "category": "gifs"
     },
     {
-      "name": "Ke\u0301tartine Ragondin",
-      "file": "ke\u0301tartine-ragondin.gif",
-      "src": "templates/gifs/ke\u0301tartine-ragondin.gif",
+      "name": "Ketartine Ragondin",
+      "file": "ketartine-ragondin.gif",
+      "src": "templates/gifs/ketartine-ragondin.gif",
       "category": "gifs"
     },
     {
@@ -1471,6 +1483,12 @@
       "category": "gifs"
     },
     {
+      "name": "Runnig Cheetah",
+      "file": "runnig-cheetah.gif",
+      "src": "templates/gifs/runnig-cheetah.gif",
+      "category": "gifs"
+    },
+    {
       "name": "Scared Cowardly Lion",
       "file": "scared-cowardly-lion.gif",
       "src": "templates/gifs/scared-cowardly-lion.gif",
@@ -1570,24 +1588,6 @@
       "name": "Turtle Dancing Shower",
       "file": "turtle-dancing-shower.gif",
       "src": "templates/gifs/turtle-dancing-shower.gif",
-      "category": "gifs"
-    },
-    {
-      "name": "Tu\u031b\u0301c Gia\u0323\u0302n",
-      "file": "tu\u031b\u0301c-gia\u0323\u0302n.gif",
-      "src": "templates/gifs/tu\u031b\u0301c-gia\u0323\u0302n.gif",
-      "category": "gifs"
-    },
-    {
-      "name": "Unimpressed Cheetah (1)",
-      "file": "unimpressed-cheetah (1).gif",
-      "src": "templates/gifs/unimpressed-cheetah (1).gif",
-      "category": "gifs"
-    },
-    {
-      "name": "Unimpressed Cheetah (2)",
-      "file": "unimpressed-cheetah (2).gif",
-      "src": "templates/gifs/unimpressed-cheetah (2).gif",
       "category": "gifs"
     },
     {
