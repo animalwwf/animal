@@ -259,171 +259,1371 @@
       "category": "classic"
     },
     {
-      "name": "Classic Soyjak Soyjak",
-      "file": "classic-soyjak-soyjak.gif",
-      "src": "templates/gifs/classic-soyjak-soyjak.gif",
+      "name": "5rsha",
+      "file": "5rsha.jpg",
+      "src": "templates/animal/5rsha.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Aha Aha Monkey",
+      "file": "aha-aha-monkey.jpg",
+      "src": "templates/animal/aha-aha-monkey.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Alpaca Template",
+      "file": "Alpaca Template.png",
+      "src": "templates/animal/Alpaca Template.png",
+      "category": "animal"
+    },
+    {
+      "name": "Anteater Meme Template",
+      "file": "anteater Meme Template.jpg",
+      "src": "templates/animal/anteater Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Auau",
+      "file": "auau.jpg",
+      "src": "templates/animal/auau.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Awkward Dog Template",
+      "file": "Awkward Dog Template.jpg",
+      "src": "templates/animal/Awkward Dog Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Bear Picnic Bear Table",
+      "file": "bear-picnic-bear-table.jpg",
+      "src": "templates/animal/bear-picnic-bear-table.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Bee Eyebrow Raising Meme Template",
+      "file": "Bee Eyebrow Raising Meme Template.jpg",
+      "src": "templates/animal/Bee Eyebrow Raising Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Bigfoot Meme Template",
+      "file": "bigfoot Meme Template.jpg",
+      "src": "templates/animal/bigfoot Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Bigfoot Meme",
+      "file": "Bigfoot Meme.jpg",
+      "src": "templates/animal/Bigfoot Meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Calzoski Geydad Perro Enojado",
+      "file": "calzoski-geydad-perro-enojado.jpg",
+      "src": "templates/animal/calzoski-geydad-perro-enojado.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Can't Decide Meme",
+      "file": "Can't Decide Meme.png",
+      "src": "templates/animal/Can't Decide Meme.png",
+      "category": "animal"
+    },
+    {
+      "name": "Cat Eyebrow Raising Meme Template",
+      "file": "Cat Eyebrow Raising Meme Template.png",
+      "src": "templates/animal/Cat Eyebrow Raising Meme Template.png",
+      "category": "animal"
+    },
+    {
+      "name": "Cat Thinking Meme Template",
+      "file": "Cat Thinking Meme Template.jpg",
+      "src": "templates/animal/Cat Thinking Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Cat Thinking Meme",
+      "file": "Cat Thinking Meme.jpg",
+      "src": "templates/animal/Cat Thinking Meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Cat Shock",
+      "file": "cat-shock.jpg",
+      "src": "templates/animal/cat-shock.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Cat",
+      "file": "cat.jpg",
+      "src": "templates/animal/cat.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Charasganja",
+      "file": "charasganja.jpg",
+      "src": "templates/animal/charasganja.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Deer In Headlights Meme Template",
+      "file": "deer in headlights Meme Template.jpg",
+      "src": "templates/animal/deer in headlights Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Deer In Headlights Meme",
+      "file": "Deer In Headlights Meme.jpg",
+      "src": "templates/animal/Deer In Headlights Meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Didn't Happen Meme",
+      "file": "Didn't Happen Meme.jpg",
+      "src": "templates/animal/Didn't Happen Meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Eyes Closed Meme Template",
+      "file": "Dog eyes closed Meme Template.png",
+      "src": "templates/animal/Dog eyes closed Meme Template.png",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dance Funny Dog Dance",
+      "file": "dog-dance-funny-dog-dance.jpg",
+      "src": "templates/animal/dog-dance-funny-dog-dance.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Developer",
+      "file": "dog-developer.jpg",
+      "src": "templates/animal/dog-developer.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dog Meme 2",
+      "file": "dog-dog-meme-2.jpg",
+      "src": "templates/animal/dog-dog-meme-2.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dog Meme 3",
+      "file": "dog-dog-meme-3.jpg",
+      "src": "templates/animal/dog-dog-meme-3.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dog Meme 4",
+      "file": "dog-dog-meme-4.jpg",
+      "src": "templates/animal/dog-dog-meme-4.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dog Meme 5",
+      "file": "dog-dog-meme-5.jpg",
+      "src": "templates/animal/dog-dog-meme-5.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Dog Meme",
+      "file": "dog-dog-meme.jpg",
+      "src": "templates/animal/dog-dog-meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Flower Field",
+      "file": "dog-flower-field.jpg",
+      "src": "templates/animal/dog-flower-field.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Funny Dog Reaction",
+      "file": "dog-funny-dog-reaction.jpg",
+      "src": "templates/animal/dog-funny-dog-reaction.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Gamer",
+      "file": "dog-gamer.jpg",
+      "src": "templates/animal/dog-gamer.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Headphone",
+      "file": "dog-headphone.jpg",
+      "src": "templates/animal/dog-headphone.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog In A Wig Dog",
+      "file": "dog-in-a-wig-dog.jpg",
+      "src": "templates/animal/dog-in-a-wig-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Meme 2",
+      "file": "dog-meme-2.jpg",
+      "src": "templates/animal/dog-meme-2.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Meme 3",
+      "file": "dog-meme-3.jpg",
+      "src": "templates/animal/dog-meme-3.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Meme Dog Funny",
+      "file": "dog-meme-dog-funny.jpg",
+      "src": "templates/animal/dog-meme-dog-funny.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Meme",
+      "file": "dog-meme.jpg",
+      "src": "templates/animal/dog-meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Reaction",
+      "file": "dog-reaction.jpg",
+      "src": "templates/animal/dog-reaction.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Smirk",
+      "file": "dog-smirk.jpg",
+      "src": "templates/animal/dog-smirk.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dog Vibing",
+      "file": "dog-vibing.jpg",
+      "src": "templates/animal/dog-vibing.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Dogm Meme 2",
+      "file": "dogm-meme-2.jpg",
+      "src": "templates/animal/dogm-meme-2.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Elapu Elapuarmy",
+      "file": "elapu-elapuarmy.jpg",
+      "src": "templates/animal/elapu-elapuarmy.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Elephant Hide",
+      "file": "elephant-hide.jpg",
+      "src": "templates/animal/elephant-hide.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Eminef",
+      "file": "eminef.jpg",
+      "src": "templates/animal/eminef.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Enojada Mun",
+      "file": "enojada-mun.jpg",
+      "src": "templates/animal/enojada-mun.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Fat Gopher",
+      "file": "fat-gopher.jpg",
+      "src": "templates/animal/fat-gopher.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Fear Dog",
+      "file": "fear-dog.jpg",
+      "src": "templates/animal/fear-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Funny Dog Dog Meme",
+      "file": "funny-dog-dog-meme.gif",
+      "src": "templates/animal/funny-dog-dog-meme.gif",
+      "category": "animal"
+    },
+    {
+      "name": "Funny Middle Finger Funny",
+      "file": "funny-middle-finger-funny.jpg",
+      "src": "templates/animal/funny-middle-finger-funny.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Good Morning Sorry",
+      "file": "good-morning-sorry.jpg",
+      "src": "templates/animal/good-morning-sorry.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Hamster Thumbs Up Hamster Happy",
+      "file": "hamster-thumbs-up-hamster-happy.jpg",
+      "src": "templates/animal/hamster-thumbs-up-hamster-happy.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Help Dog",
+      "file": "help-dog.jpg",
+      "src": "templates/animal/help-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Honse Sus",
+      "file": "honse-sus.jpg",
+      "src": "templates/animal/honse-sus.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "How About No Meme Template",
+      "file": "how about no Meme Template.jpg",
+      "src": "templates/animal/how about no Meme Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Human Dog",
+      "file": "human-dog.jpg",
+      "src": "templates/animal/human-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Juan Horse Meme",
+      "file": "Juan Horse Meme.jpg",
+      "src": "templates/animal/Juan Horse Meme.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Kangaroo Template",
+      "file": "Kangaroo Template.jpg",
+      "src": "templates/animal/Kangaroo Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Lebron James Sonion",
+      "file": "lebron-james-sonion.jpg",
+      "src": "templates/animal/lebron-james-sonion.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Looking Dog",
+      "file": "looking-dog.jpg",
+      "src": "templates/animal/looking-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Loup Tiktok",
+      "file": "loup-tiktok.jpg",
+      "src": "templates/animal/loup-tiktok.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Marc Money Dog",
+      "file": "marc-money-dog.jpg",
+      "src": "templates/animal/marc-money-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Meme Dog",
+      "file": "meme-dog.jpg",
+      "src": "templates/animal/meme-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Meowl Cowl",
+      "file": "meowl-cowl.jpg",
+      "src": "templates/animal/meowl-cowl.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Monkey I See",
+      "file": "monkey-i-see.jpg",
+      "src": "templates/animal/monkey-i-see.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Monkey",
+      "file": "monkey.jpg",
+      "src": "templates/animal/monkey.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Mr Timmy Tough Knuckles",
+      "file": "mr-timmy-tough-knuckles.jpg",
+      "src": "templates/animal/mr-timmy-tough-knuckles.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Not Funny It's Not Funny",
+      "file": "not-funny-it's-not-funny.jpg",
+      "src": "templates/animal/not-funny-it's-not-funny.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Plotting Thinking",
+      "file": "plotting-thinking.jpg",
+      "src": "templates/animal/plotting-thinking.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Question Questioning",
+      "file": "question-questioning.jpg",
+      "src": "templates/animal/question-questioning.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Red Panda Template",
+      "file": "Red Panda Template.jpg",
+      "src": "templates/animal/Red Panda Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Scared Hamster Meme",
+      "file": "Scared Hamster Meme.png",
+      "src": "templates/animal/Scared Hamster Meme.png",
+      "category": "animal"
+    },
+    {
+      "name": "Scared Hamster Template",
+      "file": "Scared Hamster Template.jpg",
+      "src": "templates/animal/Scared Hamster Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Shitpost Dog",
+      "file": "shitpost-dog.jpg",
+      "src": "templates/animal/shitpost-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Shocked",
+      "file": "shocked.jpg",
+      "src": "templates/animal/shocked.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Side Eye Dog Side Eye",
+      "file": "side-eye-dog-side-eye.jpg",
+      "src": "templates/animal/side-eye-dog-side-eye.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Stan Twitter Dog",
+      "file": "stan-twitter-dog.jpg",
+      "src": "templates/animal/stan-twitter-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Stan Twt Twitter",
+      "file": "stan-twt-twitter.jpg",
+      "src": "templates/animal/stan-twt-twitter.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Sus Dog",
+      "file": "sus-dog.jpg",
+      "src": "templates/animal/sus-dog.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Tigerwtf",
+      "file": "tigerwtf.jpg",
+      "src": "templates/animal/tigerwtf.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Tigre",
+      "file": "tigre.jpg",
+      "src": "templates/animal/tigre.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Vuduytan",
+      "file": "vuduytan.jpg",
+      "src": "templates/animal/vuduytan.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "What The Dog Doin What The Dog Doing",
+      "file": "what-the-dog-doin-what-the-dog-doing.jpg",
+      "src": "templates/animal/what-the-dog-doin-what-the-dog-doing.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Why Why Why Funny Cat Template",
+      "file": "Why Why Why Funny Cat Template.jpg",
+      "src": "templates/animal/Why Why Why Funny Cat Template.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Wtf",
+      "file": "wtf.jpg",
+      "src": "templates/animal/wtf.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "Yep Yes",
+      "file": "yep-yes.jpg",
+      "src": "templates/animal/yep-yes.jpg",
+      "category": "animal"
+    },
+    {
+      "name": "1",
+      "file": "1.gif",
+      "src": "templates/gifs/1.gif",
       "category": "gifs"
     },
     {
-      "name": "Glasses Soy",
-      "file": "glasses-soy.gif",
-      "src": "templates/gifs/glasses-soy.gif",
+      "name": "Alvin",
+      "file": "alvin.gif",
+      "src": "templates/gifs/alvin.gif",
       "category": "gifs"
     },
     {
-      "name": "Its Over Soyjak",
-      "file": "its-over-soyjak.gif",
-      "src": "templates/gifs/its-over-soyjak.gif",
+      "name": "America Watching You",
+      "file": "america-watching-you.gif",
+      "src": "templates/gifs/america-watching-you.gif",
       "category": "gifs"
     },
     {
-      "name": "Markiplier Markiplier Soyjak",
-      "file": "markiplier-markiplier-soyjak.gif",
-      "src": "templates/gifs/markiplier-markiplier-soyjak.gif",
+      "name": "Animals Funny",
+      "file": "animals-funny.gif",
+      "src": "templates/gifs/animals-funny.gif",
       "category": "gifs"
     },
     {
-      "name": "Nintendo Switch",
-      "file": "nintendo-switch.gif",
-      "src": "templates/gifs/nintendo-switch.gif",
+      "name": "Animals Judging",
+      "file": "animals-judging.gif",
+      "src": "templates/gifs/animals-judging.gif",
       "category": "gifs"
     },
     {
-      "name": "Omoriboy Omori",
-      "file": "omoriboy-omori.gif",
-      "src": "templates/gifs/omoriboy-omori.gif",
+      "name": "Animals Who Me",
+      "file": "animals-who-me.gif",
+      "src": "templates/gifs/animals-who-me.gif",
       "category": "gifs"
     },
     {
-      "name": "Pokezz",
-      "file": "pokezz.gif",
-      "src": "templates/gifs/pokezz.gif",
+      "name": "Ape Dance",
+      "file": "ape-dance.gif",
+      "src": "templates/gifs/ape-dance.gif",
       "category": "gifs"
     },
     {
-      "name": "Rdbtc Money Printer",
-      "file": "rdbtc-money-printer.gif",
-      "src": "templates/gifs/rdbtc-money-printer.gif",
+      "name": "Aslan Roar",
+      "file": "aslan-roar.gif",
+      "src": "templates/gifs/aslan-roar.gif",
       "category": "gifs"
     },
     {
-      "name": "Ritz Balls Cobson",
-      "file": "ritz-balls-cobson.gif",
-      "src": "templates/gifs/ritz-balls-cobson.gif",
+      "name": "Bear Bear Dance",
+      "file": "bear-bear-dance.gif",
+      "src": "templates/gifs/bear-bear-dance.gif",
       "category": "gifs"
     },
     {
-      "name": "Ritz Balls Soyjak (1)",
-      "file": "ritz-balls-soyjak (1).gif",
-      "src": "templates/gifs/ritz-balls-soyjak (1).gif",
+      "name": "Beaver Beavers",
+      "file": "beaver-beavers.gif",
+      "src": "templates/gifs/beaver-beavers.gif",
       "category": "gifs"
     },
     {
-      "name": "Ritz Balls Soyjak",
-      "file": "ritz-balls-soyjak.gif",
-      "src": "templates/gifs/ritz-balls-soyjak.gif",
+      "name": "Beaver Biting",
+      "file": "beaver-biting.gif",
+      "src": "templates/gifs/beaver-biting.gif",
       "category": "gifs"
     },
     {
-      "name": "Road Trip",
-      "file": "road-trip.gif",
-      "src": "templates/gifs/road-trip.gif",
+      "name": "Bison Buffalo (1)",
+      "file": "bison-buffalo (1).gif",
+      "src": "templates/gifs/bison-buffalo (1).gif",
       "category": "gifs"
     },
     {
-      "name": "Selfish Soyjak",
-      "file": "selfish-soyjak.gif",
-      "src": "templates/gifs/selfish-soyjak.gif",
+      "name": "Bison Buffalo",
+      "file": "bison-buffalo.gif",
+      "src": "templates/gifs/bison-buffalo.gif",
       "category": "gifs"
     },
     {
-      "name": "Smug Smirk",
-      "file": "smug-smirk.gif",
-      "src": "templates/gifs/smug-smirk.gif",
+      "name": "Black Panther",
+      "file": "black-panther.gif",
+      "src": "templates/gifs/black-panther.gif",
       "category": "gifs"
     },
     {
-      "name": "Soyjak Cobson",
-      "file": "soyjak-cobson.gif",
-      "src": "templates/gifs/soyjak-cobson.gif",
+      "name": "Bleh",
+      "file": "bleh.gif",
+      "src": "templates/gifs/bleh.gif",
       "category": "gifs"
     },
     {
-      "name": "Soyjak Drinking",
-      "file": "soyjak-drinking.gif",
-      "src": "templates/gifs/soyjak-drinking.gif",
+      "name": "Bring It",
+      "file": "bring-it.gif",
+      "src": "templates/gifs/bring-it.gif",
       "category": "gifs"
     },
     {
-      "name": "Soyjak Nintendo",
-      "file": "soyjak-nintendo.gif",
-      "src": "templates/gifs/soyjak-nintendo.gif",
+      "name": "Butting Heads Bison",
+      "file": "butting-heads-bison.gif",
+      "src": "templates/gifs/butting-heads-bison.gif",
       "category": "gifs"
     },
     {
-      "name": "Soyjak Wojak",
-      "file": "soyjak-wojak.gif",
-      "src": "templates/gifs/soyjak-wojak.gif",
+      "name": "Caballo",
+      "file": "caballo.gif",
+      "src": "templates/gifs/caballo.gif",
       "category": "gifs"
     },
     {
-      "name": "Thealexera Soyjak",
-      "file": "thealexera-soyjak.gif",
-      "src": "templates/gifs/thealexera-soyjak.gif",
+      "name": "Capybara Chewing",
+      "file": "capybara-chewing.gif",
+      "src": "templates/gifs/capybara-chewing.gif",
       "category": "gifs"
     },
     {
-      "name": "Thinking Wojak",
-      "file": "thinking-wojak.gif",
-      "src": "templates/gifs/thinking-wojak.gif",
+      "name": "Capybara Dance",
+      "file": "capybara-dance.gif",
+      "src": "templates/gifs/capybara-dance.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Laughing",
-      "file": "wojak-laughing.gif",
-      "src": "templates/gifs/wojak-laughing.gif",
+      "name": "Cat Angry Angry",
+      "file": "cat-angry-angry.gif",
+      "src": "templates/gifs/cat-angry-angry.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Rain Wojak",
-      "file": "wojak-rain-wojak.gif",
-      "src": "templates/gifs/wojak-rain-wojak.gif",
+      "name": "Cat Cat Love",
+      "file": "cat-cat-love.gif",
+      "src": "templates/gifs/cat-cat-love.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Sad Wojak",
-      "file": "wojak-sad-wojak.gif",
-      "src": "templates/gifs/wojak-sad-wojak.gif",
+      "name": "Cat Cat Meme",
+      "file": "cat-cat-meme.gif",
+      "src": "templates/gifs/cat-cat-meme.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Soyboy",
-      "file": "wojak-soyboy.gif",
-      "src": "templates/gifs/wojak-soyboy.gif",
+      "name": "Cat Duck",
+      "file": "cat-duck.gif",
+      "src": "templates/gifs/cat-duck.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Wojak Crying",
-      "file": "wojak-wojak-crying.gif",
-      "src": "templates/gifs/wojak-wojak-crying.gif",
+      "name": "Cat Good Morning",
+      "file": "cat-good-morning.gif",
+      "src": "templates/gifs/cat-good-morning.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak Wojak Sol",
-      "file": "wojak-wojak-sol.gif",
-      "src": "templates/gifs/wojak-wojak-sol.gif",
+      "name": "Cat Lion",
+      "file": "cat-lion.gif",
+      "src": "templates/gifs/cat-lion.gif",
       "category": "gifs"
     },
     {
-      "name": "Wojak",
-      "file": "wojak.gif",
-      "src": "templates/gifs/wojak.gif",
+      "name": "Cat Ouch",
+      "file": "cat-ouch.gif",
+      "src": "templates/gifs/cat-ouch.gif",
       "category": "gifs"
     },
     {
-      "name": "Zoomer Wojak",
-      "file": "zoomer-wojak.gif",
-      "src": "templates/gifs/zoomer-wojak.gif",
+      "name": "Cat Side Eye",
+      "file": "cat-side-eye.gif",
+      "src": "templates/gifs/cat-side-eye.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Cat",
+      "file": "cat.gif",
+      "src": "templates/gifs/cat.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Catwalk Cow",
+      "file": "catwalk-cow.gif",
+      "src": "templates/gifs/catwalk-cow.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Cha Cha",
+      "file": "cha-cha.gif",
+      "src": "templates/gifs/cha-cha.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Chased By Ostrich This Is Happening",
+      "file": "chased-by-ostrich-this-is-happening.gif",
+      "src": "templates/gifs/chased-by-ostrich-this-is-happening.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Chicken Little Morkubine Porcupine",
+      "file": "chicken-little-morkubine-porcupine.gif",
+      "src": "templates/gifs/chicken-little-morkubine-porcupine.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Chicken",
+      "file": "chicken.gif",
+      "src": "templates/gifs/chicken.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Chipmunk",
+      "file": "chipmunk.gif",
+      "src": "templates/gifs/chipmunk.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Coffee Coffee Time",
+      "file": "coffee-coffee-time.gif",
+      "src": "templates/gifs/coffee-coffee-time.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dancing Dog",
+      "file": "dancing-dog.gif",
+      "src": "templates/gifs/dancing-dog.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dog Awkward",
+      "file": "dog-awkward.gif",
+      "src": "templates/gifs/dog-awkward.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dog Bed",
+      "file": "dog-bed.gif",
+      "src": "templates/gifs/dog-bed.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dog Dog Dance",
+      "file": "dog-dog-dance.gif",
+      "src": "templates/gifs/dog-dog-dance.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dog Hiding",
+      "file": "dog-hiding.gif",
+      "src": "templates/gifs/dog-hiding.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dog Tiger",
+      "file": "dog-tiger.gif",
+      "src": "templates/gifs/dog-tiger.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dol Dog",
+      "file": "dol-dog.gif",
+      "src": "templates/gifs/dol-dog.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Dumb Porpoise I'm Stupid",
+      "file": "dumb-porpoise-i'm-stupid.gif",
+      "src": "templates/gifs/dumb-porpoise-i'm-stupid.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Eagle Dance",
+      "file": "eagle-dance.gif",
+      "src": "templates/gifs/eagle-dance.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Eating Popcorn Pocorn",
+      "file": "eating-popcorn-pocorn.gif",
+      "src": "templates/gifs/eating-popcorn-pocorn.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Eheum",
+      "file": "eheum.gif",
+      "src": "templates/gifs/eheum.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Elephant African Elephant",
+      "file": "elephant-african-elephant.gif",
+      "src": "templates/gifs/elephant-african-elephant.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Elephant Elephant Trunk",
+      "file": "elephant-elephant-trunk.gif",
+      "src": "templates/gifs/elephant-elephant-trunk.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Elephant Running",
+      "file": "elephant-running.gif",
+      "src": "templates/gifs/elephant-running.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Elephant Trunk",
+      "file": "elephant-trunk.gif",
+      "src": "templates/gifs/elephant-trunk.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Elephant",
+      "file": "elephant.gif",
+      "src": "templates/gifs/elephant.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Eyebows Dog",
+      "file": "eyebows-dog.gif",
+      "src": "templates/gifs/eyebows-dog.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Fighting Giraffe",
+      "file": "fighting-giraffe.gif",
+      "src": "templates/gifs/fighting-giraffe.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Fox Excited",
+      "file": "fox-excited.gif",
+      "src": "templates/gifs/fox-excited.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Fox Foxes",
+      "file": "fox-foxes.gif",
+      "src": "templates/gifs/fox-foxes.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Fox Yawn",
+      "file": "fox-yawn.gif",
+      "src": "templates/gifs/fox-yawn.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Freedom Roadtrip",
+      "file": "freedom-roadtrip.gif",
+      "src": "templates/gifs/freedom-roadtrip.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Freedom",
+      "file": "freedom.gif",
+      "src": "templates/gifs/freedom.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Fueled Cement",
+      "file": "fueled-cement.gif",
+      "src": "templates/gifs/fueled-cement.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Funny Animals Funny Cat",
+      "file": "funny-animals-funny-cat.gif",
+      "src": "templates/gifs/funny-animals-funny-cat.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Giraffe Dum",
+      "file": "giraffe-dum.gif",
+      "src": "templates/gifs/giraffe-dum.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Goat Goats",
+      "file": "goat-goats.gif",
+      "src": "templates/gifs/goat-goats.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Goat",
+      "file": "goat.gif",
+      "src": "templates/gifs/goat.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Gorilla Monke",
+      "file": "gorilla-monke.gif",
+      "src": "templates/gifs/gorilla-monke.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Gorilla Monkey",
+      "file": "gorilla-monkey.gif",
+      "src": "templates/gifs/gorilla-monkey.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Gravewalker Nuncamorto",
+      "file": "gravewalker-nuncamorto.gif",
+      "src": "templates/gifs/gravewalker-nuncamorto.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Groundhog Eating",
+      "file": "groundhog-eating.gif",
+      "src": "templates/gifs/groundhog-eating.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Grrr Angry",
+      "file": "grrr-angry.gif",
+      "src": "templates/gifs/grrr-angry.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "H2di Hippo Stare",
+      "file": "h2di-hippo-stare.gif",
+      "src": "templates/gifs/h2di-hippo-stare.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hi There",
+      "file": "hi-there.gif",
+      "src": "templates/gifs/hi-there.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hippo",
+      "file": "hippo.gif",
+      "src": "templates/gifs/hippo.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Horse Gouser",
+      "file": "horse-gouser.gif",
+      "src": "templates/gifs/horse-gouser.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Horse Whip My Hair",
+      "file": "horse-whip-my-hair.gif",
+      "src": "templates/gifs/horse-whip-my-hair.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hourse",
+      "file": "hourse.gif",
+      "src": "templates/gifs/hourse.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hu",
+      "file": "hu.gif",
+      "src": "templates/gifs/hu.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Humpback Whale Whale",
+      "file": "humpback-whale-whale.gif",
+      "src": "templates/gifs/humpback-whale-whale.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hyena Laugh",
+      "file": "hyena-laugh.gif",
+      "src": "templates/gifs/hyena-laugh.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Hyena Spin",
+      "file": "hyena-spin.gif",
+      "src": "templates/gifs/hyena-spin.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "I Love You",
+      "file": "i-love-you.gif",
+      "src": "templates/gifs/i-love-you.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Japan Monkey",
+      "file": "japan-monkey.gif",
+      "src": "templates/gifs/japan-monkey.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Jiddy4 Ojos Tristes",
+      "file": "jiddy4-ojos-tristes.gif",
+      "src": "templates/gifs/jiddy4-ojos-tristes.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kangaroo Animal",
+      "file": "kangaroo-animal.gif",
+      "src": "templates/gifs/kangaroo-animal.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kangaroo Awkward",
+      "file": "kangaroo-awkward.gif",
+      "src": "templates/gifs/kangaroo-awkward.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kangaroo",
+      "file": "kangaroo.gif",
+      "src": "templates/gifs/kangaroo.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Ke\u0301tartine Ragondin",
+      "file": "ke\u0301tartine-ragondin.gif",
+      "src": "templates/gifs/ke\u0301tartine-ragondin.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kiko Kikopyon",
+      "file": "kiko-kikopyon.gif",
+      "src": "templates/gifs/kiko-kikopyon.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kingdom Of The Planet Of The Apes Cornelius",
+      "file": "kingdom-of-the-planet-of-the-apes-cornelius.gif",
+      "src": "templates/gifs/kingdom-of-the-planet-of-the-apes-cornelius.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kitty Angry Angry Cat",
+      "file": "kitty-angry-angry-cat.gif",
+      "src": "templates/gifs/kitty-angry-angry-cat.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Kitty Hug Kitty Ai",
+      "file": "kitty-hug-kitty-ai.gif",
+      "src": "templates/gifs/kitty-hug-kitty-ai.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Koba Dawn Of The Planet Of The Apes",
+      "file": "koba-dawn-of-the-planet-of-the-apes.gif",
+      "src": "templates/gifs/koba-dawn-of-the-planet-of-the-apes.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Koza Kozel",
+      "file": "koza-kozel.gif",
+      "src": "templates/gifs/koza-kozel.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Laughing Cats",
+      "file": "laughing-cats.gif",
+      "src": "templates/gifs/laughing-cats.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Looks About Right",
+      "file": "looks-about-right.gif",
+      "src": "templates/gifs/looks-about-right.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Meme Cow",
+      "file": "meme-cow.gif",
+      "src": "templates/gifs/meme-cow.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Merica Bald Eagle",
+      "file": "merica-bald-eagle.gif",
+      "src": "templates/gifs/merica-bald-eagle.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Midnightgif300",
+      "file": "midnightgif300.gif",
+      "src": "templates/gifs/midnightgif300.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Monkey Ape",
+      "file": "monkey-ape.gif",
+      "src": "templates/gifs/monkey-ape.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Monkey Eating",
+      "file": "monkey-eating.gif",
+      "src": "templates/gifs/monkey-eating.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Murica",
+      "file": "murica.gif",
+      "src": "templates/gifs/murica.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Narnia Aslan",
+      "file": "narnia-aslan.gif",
+      "src": "templates/gifs/narnia-aslan.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Nostalgiasedge Shocked",
+      "file": "nostalgiasedge-shocked.gif",
+      "src": "templates/gifs/nostalgiasedge-shocked.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "One More Day Yipee",
+      "file": "one-more-day-yipee.gif",
+      "src": "templates/gifs/one-more-day-yipee.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Panda Love",
+      "file": "panda-love.gif",
+      "src": "templates/gifs/panda-love.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Panda Panda Love",
+      "file": "panda-panda-love.gif",
+      "src": "templates/gifs/panda-panda-love.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Panda Spinning",
+      "file": "panda-spinning.gif",
+      "src": "templates/gifs/panda-spinning.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Paramount Plus Goat Paramount",
+      "file": "paramount-plus-goat-paramount.gif",
+      "src": "templates/gifs/paramount-plus-goat-paramount.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Parrot Party",
+      "file": "parrot-party.gif",
+      "src": "templates/gifs/parrot-party.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Planet Of The Apes Proximus Caesar",
+      "file": "planet-of-the-apes-proximus-caesar.gif",
+      "src": "templates/gifs/planet-of-the-apes-proximus-caesar.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Playing Meet Six Rescued Rhinos That Survived Poaching",
+      "file": "playing-meet-six-rescued-rhinos-that-survived-poaching.gif",
+      "src": "templates/gifs/playing-meet-six-rescued-rhinos-that-survived-poaching.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Porcupine Corn",
+      "file": "porcupine-corn.gif",
+      "src": "templates/gifs/porcupine-corn.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Puma Pumas",
+      "file": "puma-pumas.gif",
+      "src": "templates/gifs/puma-pumas.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Punch Monkey Punch The Monkey",
+      "file": "punch-monkey-punch-the-monkey.gif",
+      "src": "templates/gifs/punch-monkey-punch-the-monkey.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Rabit Cute Animals",
+      "file": "rabit-cute-animals.gif",
+      "src": "templates/gifs/rabit-cute-animals.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Rhino",
+      "file": "rhino.gif",
+      "src": "templates/gifs/rhino.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Roaming Tiger Tigers101",
+      "file": "roaming-tiger-tigers101.gif",
+      "src": "templates/gifs/roaming-tiger-tigers101.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Scared Cowardly Lion",
+      "file": "scared-cowardly-lion.gif",
+      "src": "templates/gifs/scared-cowardly-lion.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Screaming Fox",
+      "file": "screaming-fox.gif",
+      "src": "templates/gifs/screaming-fox.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Seal Clap",
+      "file": "seal-clap.gif",
+      "src": "templates/gifs/seal-clap.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Seal Clapping Property Of Mello",
+      "file": "seal-clapping-property-of-mello.gif",
+      "src": "templates/gifs/seal-clapping-property-of-mello.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Seal Kiss",
+      "file": "seal-kiss.gif",
+      "src": "templates/gifs/seal-kiss.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Shark Finding Nemo",
+      "file": "shark-finding-nemo.gif",
+      "src": "templates/gifs/shark-finding-nemo.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Solemn Noa",
+      "file": "solemn-noa.gif",
+      "src": "templates/gifs/solemn-noa.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Swimming Our Living World",
+      "file": "swimming-our-living-world.gif",
+      "src": "templates/gifs/swimming-our-living-world.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tapir Laser",
+      "file": "tapir-laser.gif",
+      "src": "templates/gifs/tapir-laser.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tapir Skritches",
+      "file": "tapir-skritches.gif",
+      "src": "templates/gifs/tapir-skritches.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "The Rock Dwayne Johnson",
+      "file": "the-rock-dwayne-johnson.gif",
+      "src": "templates/gifs/the-rock-dwayne-johnson.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Thinking Hmm",
+      "file": "thinking-hmm.gif",
+      "src": "templates/gifs/thinking-hmm.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Thinking Thinking Ape",
+      "file": "thinking-thinking-ape.gif",
+      "src": "templates/gifs/thinking-thinking-ape.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tiger Dog Tiger",
+      "file": "tiger-dog-tiger.gif",
+      "src": "templates/gifs/tiger-dog-tiger.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tiger Sitting Tiger",
+      "file": "tiger-sitting-tiger.gif",
+      "src": "templates/gifs/tiger-sitting-tiger.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tobi Zo",
+      "file": "tobi-zo.gif",
+      "src": "templates/gifs/tobi-zo.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Turtle Dancing Shower",
+      "file": "turtle-dancing-shower.gif",
+      "src": "templates/gifs/turtle-dancing-shower.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Tu\u031b\u0301c Gia\u0323\u0302n",
+      "file": "tu\u031b\u0301c-gia\u0323\u0302n.gif",
+      "src": "templates/gifs/tu\u031b\u0301c-gia\u0323\u0302n.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Unimpressed Cheetah (1)",
+      "file": "unimpressed-cheetah (1).gif",
+      "src": "templates/gifs/unimpressed-cheetah (1).gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Unimpressed Cheetah (2)",
+      "file": "unimpressed-cheetah (2).gif",
+      "src": "templates/gifs/unimpressed-cheetah (2).gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Unimpressed Cheetah",
+      "file": "unimpressed-cheetah.gif",
+      "src": "templates/gifs/unimpressed-cheetah.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Walking Meet The Heroes Who Protect The Last Northern White Rhinos In The World",
+      "file": "walking-meet-the-heroes-who-protect-the-last-northern-white-rhinos-in-the-world.gif",
+      "src": "templates/gifs/walking-meet-the-heroes-who-protect-the-last-northern-white-rhinos-in-the-world.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "War Elephant",
+      "file": "war-elephant.gif",
+      "src": "templates/gifs/war-elephant.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Waving Bear Waving",
+      "file": "waving-bear-waving.gif",
+      "src": "templates/gifs/waving-bear-waving.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "You Got",
+      "file": "you-got.gif",
+      "src": "templates/gifs/you-got.gif",
+      "category": "gifs"
+    },
+    {
+      "name": "Zebra Zebras",
+      "file": "zebra-zebras.gif",
+      "src": "templates/gifs/zebra-zebras.gif",
       "category": "gifs"
     }
   ]
